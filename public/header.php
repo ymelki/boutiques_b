@@ -36,8 +36,9 @@
                 </ul> 
                     
                    
-            </div><i class="fa-solid fa-user"></i>
-                    <i class="fa-solid fa-cart-shopping"></i>
-               
+            </div>
+            <i class="fa-solid fa-user" style="color:red"></i>
+                    <i class="fa-solid fa-cart-shopping" style="color:red"></i>
+
         </div>
     </nav>
