@@ -7,7 +7,7 @@
         return $dbh;
     }
     
-    function getProduit(){
+    function getProduit_Entity(){
         /* 1. Connexion à une base MySQL avec l'invocation de pilote */
         $dbh=connect_bd();
         //2. RECUPERER LES DONNEES 

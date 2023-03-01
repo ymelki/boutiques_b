@@ -21,11 +21,15 @@ $page=$_SERVER['PATH_INFO'];
 
 // gestion des pages
 if ($page=="/catalogue"){
+      include __DIR__.'/../src/Controller/ProduitController.php';
+      getProduit();
+
    // recuperation des produits
-   include __DIR__.'/../src/Entity/Produit.php';
+ /*  include __DIR__.'/../src/Entity/Produit.php';
    $resultat=getProduit();
    // Renvoie vue 
    include __DIR__.'/../templates/catalogue.php';
+   */
 }
 
 elseif ($page=="/user"){
