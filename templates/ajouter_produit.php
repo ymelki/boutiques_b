@@ -1,5 +1,5 @@
 
-<form action="enregistrer_produit.php" method="post">
+<form action="/enregistrer_produit" method="post">
         <div>
             <label for="name">Titre :</label>
             <input type="text" id="titre" name="titre">
@@ -13,7 +13,7 @@
             <input type="text" name="prix" id="prix"></textarea>
         </div>
         <div id="erreur_prix"></div>
-        
+
         <input type="submit" value="ENREGISTER"/>
     </form>
  

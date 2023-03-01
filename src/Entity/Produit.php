@@ -26,4 +26,13 @@
         );
     }
 
+    function enregistrer_produit_entite($titre,$description,$prix){
+        $dbh=connect_bd();
+        // 2 la requete d'insertion
+
+        $dbh->query(
+            "INSERT INTO produit (id, titre, description, prix)
+             VALUES (NULL, '$titre', '$description', '$prix')"
+        );
+    }
     ?>

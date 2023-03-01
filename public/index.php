@@ -39,9 +39,7 @@ elseif ($page=="/user"){
    include __DIR__.'/../templates/user.php';
 }
 
-elseif ($page=="/ajouter_produit"){
-    include __DIR__.'/../templates/ajouter_produit.php';
-}
+
 
 elseif ($page=="/test"){
     include __DIR__.'/../src/Entity/Produit.php';
@@ -54,6 +52,16 @@ elseif ($page=="/supprimer_produit"){
     // rediriger vers le catalogue 
     header('Location: index.php');
 }
+elseif ($page=="/ajouter_produit"){
+    include __DIR__.'/../src/Controller/ProduitController.php';
+    nouveauproduit();
+    // include __DIR__.'/../templates/ajouter_produit.php';
+} 
+
+elseif ($page=="/enregistrer_produit"){
+    include __DIR__.'/../src/Controller/ProduitController.php';
+    enregistrer_produit();
+ }
 else {
     echo "ERROR 404";
 }
