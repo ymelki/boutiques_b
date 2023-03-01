@@ -26,13 +26,14 @@
         );
     }
 
-    function enregistrer_produit_entite($titre,$description,$prix){
+    function enregistrer_produit_entite($titre,$description,$prix,$nom_image){
         $dbh=connect_bd();
         // 2 la requete d'insertion
-
-        $dbh->query(
-            "INSERT INTO produit (id, titre, description, prix)
-             VALUES (NULL, '$titre', '$description', '$prix')"
+        $info=$dbh->query(
+            "INSERT INTO produit (id, titre, description, prix,nom_image)
+             VALUES (NULL, '$titre', '$description', '$prix','$nom_image')"
         );
+        echo "\nPDO::errorCode(): ", $info->errorCode();
+
     }
     ?>

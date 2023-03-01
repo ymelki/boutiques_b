@@ -18,9 +18,15 @@ function enregistrer_produit(){
     $titre = $_POST['titre'];
     $description = $_POST['description'];
     $prix = $_POST['prix'];
+    $name_image= $_FILES['image']['name'];
     include __DIR__.'/../Entity/Produit.php';
+
+    // On peut valider le fichier et le stocker définitivement
+    move_uploaded_file($_FILES['image']['tmp_name'],  
+    'asset/img/' . basename($_FILES['image']['name'])
+    );
     // on lancer la fonction insert
-    enregistrer_produit_entite($titre,$description,$prix);
+    enregistrer_produit_entite($titre,$description,$prix,$name_image);
     // charge la page catalogue
     header('Location: index.php');
 }

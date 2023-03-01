@@ -60,7 +60,9 @@ elseif ($page=="/ajouter_produit"){
 
 elseif ($page=="/enregistrer_produit"){
     include __DIR__.'/../src/Controller/ProduitController.php';
-    enregistrer_produit();
+   
+
+     enregistrer_produit();
  }
 else {
     echo "ERROR 404";
