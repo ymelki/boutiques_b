@@ -19,19 +19,20 @@ else {
 $page=$_SERVER['PATH_INFO'];
 }
 
-
-
-
 // gestion des pages
 if ($page=="/catalogue"){
    // recuperation des produits
    include __DIR__.'/../src/Entity/Produit.php';
+   $resultat=getProduit();
    // Renvoie vue 
    include __DIR__.'/../templates/catalogue.php';
 }
 
 elseif ($page=="/user"){
-    echo "Vous etes sur la pages user";
+    // recuperation des user
+   include __DIR__.'/../src/Entity/User.php';
+   // Renvoie vue 
+   include __DIR__.'/../templates/user.php';
 }
 
 elseif ($page=="/ajouter_produit"){
@@ -39,6 +40,11 @@ elseif ($page=="/ajouter_produit"){
 }
 
 elseif ($page=="/test"){
+    include __DIR__.'/../src/Entity/Produit.php';
+    var_dump($resultat);
+}
+
+elseif ($page=="/supprimer_produit"){
     include __DIR__.'/../src/Entity/Produit.php';
     var_dump($resultat);
 }
