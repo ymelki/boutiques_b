@@ -46,7 +46,9 @@ elseif ($page=="/test"){
 
 elseif ($page=="/supprimer_produit"){
     include __DIR__.'/../src/Entity/Produit.php';
-    var_dump($resultat);
+    supprimer_produit();  
+    // rediriger vers le catalogue 
+    header('Location: index.php');
 }
 else {
     echo "ERROR 404";
