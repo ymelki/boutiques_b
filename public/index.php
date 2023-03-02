@@ -94,15 +94,16 @@ elseif ($page=="/detail_user"){
 
 // gestion authentification
 // afficher un user en particulier
-elseif ($page=="/form_authentication"){ 
+elseif ($page=="/connexion"){ 
     include __DIR__.'/../src/Controller/AuthentificationController.php';
     // fonction qui ramene du vue  
+    form_connexion();
 }
 // afficher un user en particulier
 elseif ($page=="/verifie_authentication"){ 
     include __DIR__.'/../src/Controller/AuthentificationController.php';
     // fonction qui va verifie les identifiants de connexion
-
+    verifie_authentication();
 }
 
 

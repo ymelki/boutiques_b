@@ -39,7 +39,6 @@ function detail_user() {
     $unuser=getDetailUser($email);
     // var_dump($unuser);
     include __DIR__.'/../../templates/un_user.php';
-
 }
 // MODIFIER LES PRODUITS
 

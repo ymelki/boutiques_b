@@ -45,6 +45,6 @@
           $resultat = $dbh->query("select * from user where email='$email'")->fetch();
           // print_r($resultat);
           return $resultat;
-
     }
+    
     ?>
