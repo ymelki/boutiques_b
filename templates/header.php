@@ -33,6 +33,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/ajouter_produit">ajouter produit</a>
                 </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="/nouveau_user">ajouter user</a>
+                </li> 
             </ul> 
                 
                

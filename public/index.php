@@ -33,10 +33,9 @@ if ($page=="/catalogue"){
 }
 
 elseif ($page=="/user"){
-    // recuperation des user
-   include __DIR__.'/../src/Entity/User.php';
-   // Renvoie vue 
-   include __DIR__.'/../templates/user.php';
+    include __DIR__.'/../src/Controller/UserController.php';
+    getUser();
+
 }
 
 
@@ -60,10 +59,40 @@ elseif ($page=="/ajouter_produit"){
 
 elseif ($page=="/enregistrer_produit"){
     include __DIR__.'/../src/Controller/ProduitController.php';
-   
+    enregistrer_produit();
+}
 
-     enregistrer_produit();
- }
+// afficher tout les user
+elseif ($page=="/liste_user"){ 
+    include __DIR__.'/../src/Controller/UserController.php';
+    getUser();
+}
+
+// creer un nouveau user
+elseif ($page=="/nouveau_user"){ 
+    include __DIR__.'/../src/Controller/UserController.php';
+    nouveauuser();
+
+}
+
+// enregistrement / insertion user
+elseif ($page=="/enregistrer_user"){ 
+    include __DIR__.'/../src/Controller/UserController.php';
+    enregistrer_user();
+}
+
+// supprimer un user en particulier
+elseif ($page=="/supprimer_user"){ 
+}
+// afficher un user en particulier
+elseif ($page=="/detail_user"){ 
+}
+
+
+
+
+
+
 else {
     echo "ERROR 404";
 }

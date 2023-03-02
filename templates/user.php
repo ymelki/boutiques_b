@@ -3,7 +3,8 @@
         <?php foreach ($resultat as $unuser) {  ?>
             <div class="col">
                 <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="/asset/img/<?=$unuser['image']?>"
+                      class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?= $unuser['email']  ?></h5>
                         <p class="card-text"><?= $unuser['password'] ?></p>
