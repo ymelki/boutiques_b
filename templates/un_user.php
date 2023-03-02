@@ -1,6 +1,6 @@
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
-        <?php foreach ($resultat as $unuser) {  ?>
+         
             <div class="col">
                 <div class="card">
                     <img src="/asset/img/<?=$unuser['image']?>"
@@ -12,7 +12,7 @@
                     <a href="/detail_user?email=<?= $unuser['email']?>">detail user</a>
                 </div>
             </div>
-        <?php  }  ?>
+       
     </div>
 
 

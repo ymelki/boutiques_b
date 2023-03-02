@@ -85,12 +85,25 @@ elseif ($page=="/enregistrer_user"){
 elseif ($page=="/supprimer_user"){ 
 }
 // afficher un user en particulier
-elseif ($page=="/detail_user"){ 
+elseif ($page=="/detail_user"){
+    include __DIR__.'/../src/Controller/UserController.php';
+    detail_user();
+
 }
 
 
+// gestion authentification
+// afficher un user en particulier
+elseif ($page=="/form_authentication"){ 
+    include __DIR__.'/../src/Controller/AuthentificationController.php';
+    // fonction qui ramene du vue  
+}
+// afficher un user en particulier
+elseif ($page=="/verifie_authentication"){ 
+    include __DIR__.'/../src/Controller/AuthentificationController.php';
+    // fonction qui va verifie les identifiants de connexion
 
-
+}
 
 
 else {

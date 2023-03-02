@@ -31,6 +31,16 @@ function enregistrer_user(){
     header('Location: /liste_user');
 }
 
+
+// detail user
+function detail_user() {
+    include __DIR__.'/../Entity/User.php';
+    $email=$_GET['email'];
+    $unuser=getDetailUser($email);
+    // var_dump($unuser);
+    include __DIR__.'/../../templates/un_user.php';
+
+}
 // MODIFIER LES PRODUITS
 
 

@@ -37,4 +37,14 @@
         echo "\nPDO::errorCode(): ", $info->errorCode();
 
     }
+
+
+    function getDetailUser($email){
+          $dbh=connect_bd();
+          //2. RECUPERER LES DONNEES 
+          $resultat = $dbh->query("select * from user where email='$email'")->fetch();
+          // print_r($resultat);
+          return $resultat;
+
+    }
     ?>
