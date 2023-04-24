@@ -1,9 +1,11 @@
 <?php
 // LIRE LES PRODUITS
 function getProduit(){
+
    include_once __DIR__.'/../Entity/Produit.php';
    $resultat=getProduit_Entity();
    // Renvoie vue 
+   
    include_once __DIR__.'/../../templates/catalogue.php';
 }
 

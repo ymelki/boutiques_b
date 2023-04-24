@@ -9,6 +9,18 @@
 // gestion de la variable path_info
 // include "header.php";
 session_start();
+
+var_dump($_SESSION);
+// on considere que l'on est deconnecte par défaut
+$connexion=false;
+
+// on verifie si la variable session user qui determine notre authentification
+// existe
+if(isset($_SESSION['user'])) {
+    // si on est connecte alors connexion <= true
+    $connexion=true;
+}  
+
 //include_once __DIR__.'/../src/Entity/User.php';
 //echo $_SESSION['user'];
 // $user=getDetailUser($_SESSION['user']);
@@ -29,6 +41,7 @@ $page=$_SERVER['PATH_INFO'];
 // gestion des pages
 if ($page=="/catalogue"){
       include __DIR__.'/../src/Controller/ProduitController.php';
+
       getProduit();
 
    // recuperation des produits
@@ -113,6 +126,13 @@ elseif ($page=="/verifie_authentication"){
     verifie_authentication();
 }
 
+
+// deconnexion
+elseif ($page=="/deconnexion"){ 
+    include __DIR__.'/../src/Controller/AuthentificationController.php';
+    // fonction qui va verifie les identifiants de connexion
+    deconnexion();
+}
 
 else {
     echo "ERROR 404";
