@@ -149,7 +149,14 @@ elseif ($page=="/deconnexion"){
 elseif ($page=="/ajouter_panier_produit"){ 
     include __DIR__.'/../src/Controller/PanierController.php';
     // fonction qui va verifie les identifiants de connexion
-    
+    add() ;
+}
+
+// ajouter au panier
+elseif ($page=="/vider_panier"){ 
+    include __DIR__.'/../src/Controller/PanierController.php';
+    // fonction qui va verifie les identifiants de connexion
+    vider_panier() ;
 }
 
 
