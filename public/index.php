@@ -10,7 +10,7 @@
 // include "header.php";
 session_start();
 
-var_dump($_SESSION);
+// var_dump($_SESSION);
 // on considere que l'on est deconnecte par défaut
 $connexion=false;
 $admin=false;
@@ -144,6 +144,14 @@ elseif ($page=="/deconnexion"){
     // fonction qui va verifie les identifiants de connexion
     deconnexion();
 }
+
+// ajouter au panier
+elseif ($page=="/ajouter_panier_produit"){ 
+    include __DIR__.'/../src/Controller/PanierController.php';
+    // fonction qui va verifie les identifiants de connexion
+    
+}
+
 
 else {
     echo "ERROR 404";
