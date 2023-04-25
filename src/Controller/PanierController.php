@@ -31,6 +31,10 @@ function add() {
     $_SESSION['panier']=$panier;
     var_dump($panier);
 
+    // redirige vers la page voir panier
+    header('Location: index.php/panier');
+
+
     /*
     Quand on met un autre produit on devrait l'avoir dans notre panier
     CAS ou remet le même produit => quantité devrait augmenter
@@ -47,7 +51,11 @@ function add() {
 }
 
 function vider_panier(){
+    // supprimer la variable session panier
     unset($_SESSION['panier']);
+    // rediriger vers le catalogue
+    header('Location: index.php');
+
 }
 
 

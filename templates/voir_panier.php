@@ -16,7 +16,7 @@
             <td><?=$unelementpanier['produit']['titre']?></td>
             <td><?=$unelementpanier['produit']['description']?></td>
             <td><?=$unelementpanier['produit']['prix']?></td>
-            <td><?=$unelementpanier['produit']['nom_image']?></td>
+            <td><img src="/asset/img/<?=$unelementpanier['produit']['nom_image']?>" class="w-25"></td>
             <td><?=$unelementpanier['quantite']?></td>
             <td><?=$unelementpanier['total']?></td>
         </tr>
@@ -25,5 +25,6 @@
 </table>
 <br /><br />
 <h2>TOTAL : <?=$total ?> €</h2> 
-<a href="/commandez">
-<h3> Passez la commande </h3></a>
+<a href="/commandez"><h3> Passez la commande </h3></a>
+
+<a href="/vider_panier"><h6> Vider le panier </h3></a>
