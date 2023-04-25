@@ -16,7 +16,7 @@
             <td><?=$unelementpanier['produit']['titre']?></td>
             <td><?=$unelementpanier['produit']['description']?></td>
             <td><?=$unelementpanier['produit']['prix']?></td>
-            <td><img src="/asset/img/<?=$unelementpanier['produit']['nom_image']?>" class="w-25"></td>
+            <td><img src="/asset/img/<?= $unelementpanier['produit']['nom_image']!="" ? $unelementpanier['produit']['nom_image'] : "no image.jpg";    ?>" class="w-25"></td>
             <td><?=$unelementpanier['quantite']?></td>
             <td><?=$unelementpanier['total']?></td>
         </tr>

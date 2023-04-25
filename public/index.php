@@ -165,6 +165,11 @@ elseif ($page=="/panier"){
     // fonction qui va verifie les identifiants de connexion
     voir_panier() ;
 }
+elseif ($page=="/commandez"){ 
+    include __DIR__.'/../src/Controller/CommandeController.php';
+    // fonction qui va verifie les identifiants de connexion
+    commande();
+}
 
 else {
     echo "ERROR 404";
