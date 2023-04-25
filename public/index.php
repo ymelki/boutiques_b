@@ -158,7 +158,13 @@ elseif ($page=="/vider_panier"){
     // fonction qui va verifie les identifiants de connexion
     vider_panier() ;
 }
-
+// voir le panier
+// ajouter au panier
+elseif ($page=="/panier"){ 
+    include __DIR__.'/../src/Controller/PanierController.php';
+    // fonction qui va verifie les identifiants de connexion
+    voir_panier() ;
+}
 
 else {
     echo "ERROR 404";
