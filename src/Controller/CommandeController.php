@@ -15,6 +15,15 @@ function commande(){
 
     insert_facture($user);
     //2. stocké dans la bd les lignes de commandes
+    include_once __DIR__."/../Entity/commande.php";
+
+    $panier=$_SESSION['panier'];
+    $last_facture=getLastFacture();
+
+    foreach ($panier as $cle=>$value){
+         insert_commande($last_facture, $cle ,$value);
+
+    }
 
     //3. supprimer la session panier
 }
