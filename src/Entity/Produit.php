@@ -15,7 +15,7 @@
         $dbh=connect_bd();
         //2. RECUPERER LES DONNEES 
         $resultat = $dbh->query("select * from produit where id=$id")->fetch();
-    // print_r($resultat);
+        // print_r($resultat);
         return $resultat;
     }
 

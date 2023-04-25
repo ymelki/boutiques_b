@@ -50,6 +50,24 @@ function vider_panier(){
     unset($_SESSION['panier']);
 }
 
+
+
+function getTotalPanier(){
+    // variable total qui demarre à 0
+    $total=0;
+    // on recuperer notre variable session contenant les produits et quantité
+    $panier=$_SESSION['panier'];
+    // on boucle sur le tableau
+    foreach( $panier as $cle_produit=>$quantite){
+        // on recupere les infos du produits dont le prix
+        $produitencours=getOneProduit_Entity($cle_produit);
+        // j'accumule le total avec l'ancienne valeur avant la boucle
+        // + prix du produit en cours * qu
+        $total=$total+($produitencours['prix']*$quantite);
+    }
+    return $total;
+}
+
 function voir_panier(){
     // recuperer la variable sessions
     $panier=$_SESSION['panier'];
@@ -63,24 +81,21 @@ function voir_panier(){
     $panier_complet=array();
 
     // on boucle sur le tableau de la session 
-    foreach( $panier as $cle => $value){
+    foreach( $panier as $cle_produit => $quantite){
         // produit contient un tableau avec tout les element d'un produit
         // pour un identifiant du produit
-        $produit=getOneProduit_Entity($cle);
+        $produit=getOneProduit_Entity($cle_produit);
         $panier_complet[]=[
             'produit'=>$produit,
-            'quantite'=>$value,
-            'total'=>$produit['prix']*$value
+            'quantite'=>$quantite,
+            'total'=>$produit['prix']*$quantite
         ];
-
-    }
-
+    } 
+    $total=getTotalPanier();
     //   var_dump($panier_complet);
-
-
+ 
     // $monpanier existe avec tous les elements
  
     // derniere etape on ramene une vue affichant le panier
-    include __DIR__.'/../../templates/voir_panier.php';
-
+    include __DIR__.'/../../templates/voir_panier.php'; 
 }

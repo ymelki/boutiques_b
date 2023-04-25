@@ -23,3 +23,7 @@
     <?php } ?>
 
 </table>
+<br /><br />
+<h2>TOTAL : <?=$total ?> €</h2> 
+<a href="/commandez">
+<h3> Passez la commande </h3></a>
