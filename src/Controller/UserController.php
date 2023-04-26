@@ -18,6 +18,7 @@ function enregistrer_user(){
     // on recupere les données en POST via le formulaire
     $email = $_POST['email'];
     $pwd = $_POST['pwd']; 
+    $pwd_crypte=  password_hash($pwd, PASSWORD_BCRYPT);
     $name_image= $_FILES['image']['name'];
     include __DIR__.'/../Entity/User.php';
 
@@ -26,7 +27,7 @@ function enregistrer_user(){
     'asset/img/' . basename($_FILES['image']['name'])
     );
     // on lancer la fonction insert
-    enregistrer_user_entite($email,$pwd,$name_image);
+    enregistrer_user_entite($email,$pwd_crypte,$name_image);
     // charge la page catalogue
     header('Location: /liste_user');
 }

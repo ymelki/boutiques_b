@@ -35,7 +35,7 @@ function mes_commande(){
     $user=getDetailUser($_SESSION['user']);
     include_once __DIR__."/../Entity/commande.php";
     $mescommandes=getCommande($user['id']);
-    var_dump($mescommandes);
+    // var_dump($mescommandes);
     include __DIR__.'/../../templates/voir_commande.php'; 
 
 

@@ -1,4 +1,4 @@
-<h1>Mon panier</h1>
+<h1>Mes commandes</h1>
 
 <table width=100%>
     <tr>
