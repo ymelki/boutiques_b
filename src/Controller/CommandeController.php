@@ -26,4 +26,5 @@ function commande(){
     }
 
     //3. supprimer la session panier
+    unset($_SESSION['panier']);
 }

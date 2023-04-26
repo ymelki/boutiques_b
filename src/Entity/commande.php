@@ -11,7 +11,7 @@
         $info=$dbh->query(
             "INSERT INTO commande (id, facture_id, produit_id,quantite)
              VALUES (NULL,
-                    $facture_id,
+                    $id_facture,
                     $id_produit,
                     $quantite 
              

@@ -172,6 +172,6 @@ elseif ($page=="/commandez"){
 }
 
 else {
-    syslog(1,"test");
+    // syslog(1,"test");
     echo "ERROR 404";
 }
