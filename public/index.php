@@ -178,4 +178,7 @@ elseif ($page=="/mes_commandes"){
 else {
     // syslog(1,"test");
     echo "ERROR 404";
+    $test='$2y$10$TJJQgbYVTOSIiWgONwAMhOT9JS1ytvhubsiwz2GOC747.s696TXw2';
+    $test=password_verify('1234567',$test);
+    echo $test;
 }

@@ -23,7 +23,7 @@ function verifie_authentication(){
         return; 
     }
     //CAS 2 l'email existe et il faut verifier si le mot de passe
-   if ($unuser['password'] == $pwd && $unuser['email']==$email) {
+   if (password_verify(  $pwd    , $unuser['password']   ) && $unuser['email']==$email) {
         // 1 creation de la session
         $_SESSION["user"]=$email;
         include __DIR__.'/../../templates/espace_membre.php';
