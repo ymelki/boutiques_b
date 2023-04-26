@@ -170,7 +170,11 @@ elseif ($page=="/commandez"){
     // fonction qui va verifie les identifiants de connexion
     commande();
 }
-
+elseif ($page=="/mes_commandes"){ 
+    include __DIR__.'/../src/Controller/CommandeController.php';
+    // fonction qui va verifie les identifiants de connexion
+    mes_commande();
+}
 else {
     // syslog(1,"test");
     echo "ERROR 404";

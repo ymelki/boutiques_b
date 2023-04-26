@@ -28,3 +28,13 @@ function commande(){
     //3. supprimer la session panier
     unset($_SESSION['panier']);
 }
+
+function mes_commande(){
+    // afficher l'ensemble de mes commandes
+    include_once __DIR__."/../Entity/User.php";
+    $user=getDetailUser($_SESSION['user']);
+    include_once __DIR__."/../Entity/commande.php";
+    $mescommandes=getCommande($user['id']);
+    var_dump($mescommandes);
+    
+}

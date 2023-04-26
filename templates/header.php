@@ -46,6 +46,9 @@
                 </li> 
                 <?php  if ($connexion==true) {  ?> 
                 <li class="nav-item">
+                    <a class="nav-link" href="/mes_commandes">Mes commandes</a>
+                </li> 
+                <li class="nav-item">
                     <a class="nav-link" href="/deconnexion">Deconnexion</a>
                 </li> 
                 <?php } ?>
