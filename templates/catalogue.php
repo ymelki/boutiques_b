@@ -13,7 +13,7 @@ catalogue !
                         <h5 class="card-title"><?= $unproduit['titre'] . " " . $unproduit['prix'] ?></h5>
                         <p class="card-text"><?= $unproduit['description'] ?></p>
                         <p>
-                            <a href="detail.php?id=<?=$unproduit['id']?>">VOIR LE DETAIL</a>
+                            <a href="/detail?id=<?=$unproduit['id']?>">VOIR LE DETAIL</a>
                                  <a href="/ajouter_panier_produit?id=<?=$unproduit['id']?>">AJOUTER AU PANIER</a>
                                 <a href="/supprimer_produit?id=<?=$unproduit['id']?>">SUPPRIMER</a>
                          </p>

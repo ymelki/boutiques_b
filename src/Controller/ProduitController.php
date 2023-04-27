@@ -40,5 +40,13 @@ function enregistrer_produit(){
 function deleteProduit(){
     
 }
+// detail
+function detail(){
+    // on doit appeller le modele ou entité qui communique à la B.D.
+    include_once __DIR__.'/../Entity/Produit.php';
+    $id=$_GET['id'];
+    $monproduit=getOneProduit_Entity($id);
+    include __DIR__.'/../../templates/produit_detail.php';
+}
 
 ?>

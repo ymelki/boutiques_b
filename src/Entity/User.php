@@ -34,6 +34,21 @@
     }
 
 
+        // inserer un user
+        function enregistrer_user_entite_s($email,$password,$image){
+            $dbh=connect_bd();
+            $requetePrepare = $dbh->prepare(
+                "INSERT INTO user (id, email, password, image)
+                VALUES (NULL, :unemail, :unpwd, :uneimg)"
+            );
+            $requetePrepare->bindParam(':unemail', $email, PDO::PARAM_STR);
+            $requetePrepare->bindParam(':unpwd', $password, PDO::PARAM_STR);
+            $requetePrepare->bindParam(':uneimg', $image, PDO::PARAM_STR);
+            $requetePrepare->execute();
+    
+        }
+
+
     function getDetailUser($email){
           $dbh=connect_bd();
           //2. RECUPERER LES DONNEES 

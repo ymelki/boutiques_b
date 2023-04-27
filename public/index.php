@@ -175,6 +175,12 @@ elseif ($page=="/mes_commandes"){
     // fonction qui va verifie les identifiants de connexion
     mes_commande();
 }
+
+elseif ($page=="/detail"){ 
+    include __DIR__.'/../src/Controller/ProduitController.php';
+    // fonction qui va verifie les identifiants de connexion
+    detail();
+}
 else {
     // syslog(1,"test");
     echo "ERROR 404";
