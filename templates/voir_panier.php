@@ -1,4 +1,6 @@
-<h1>Mon panier</h1>
+
+<?php if (isset($panier_complet)) { ?>
+    <h1>Mon panier</h1>
 
 <table width=100%>
     <tr>
@@ -28,3 +30,5 @@
 <a href="/commandez"><h3> Passez la commande </h3></a>
 
 <a href="/vider_panier"><h6> Vider le panier </h3></a>
+
+<?php }  else {  echo "Le panier est vide !"; }?>

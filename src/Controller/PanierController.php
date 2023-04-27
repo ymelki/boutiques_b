@@ -77,33 +77,35 @@ function getTotalPanier(){
 }
 
 function voir_panier(){
-    // recuperer la variable sessions
-    $panier=$_SESSION['panier'];
+    if (isset($_SESSION['panier'])) {
+        // recuperer la variable sessions
+        $panier=$_SESSION['panier'];
 
-    // on inclut le code correspondant à l'entité produit permettant de 
-    // recuperer des données sur la B.D.
-    include_once __DIR__."/../Entity/Produit.php";
+        // on inclut le code correspondant à l'entité produit permettant de 
+        // recuperer des données sur la B.D.
+        include_once __DIR__."/../Entity/Produit.php";
 
-    //panier_complet variable contenant les données de la session
-    //avec les données du produit correspondant 
-    $panier_complet=array();
+        //panier_complet variable contenant les données de la session
+        //avec les données du produit correspondant 
+        $panier_complet=array();
 
-    // on boucle sur le tableau de la session 
-    foreach( $panier as $cle_produit => $quantite){
-        // produit contient un tableau avec tout les element d'un produit
-        // pour un identifiant du produit
-        $produit=getOneProduit_Entity($cle_produit);
-        $panier_complet[]=[
-            'produit'=>$produit,
-            'quantite'=>$quantite,
-            'total'=>$produit['prix']*$quantite
-        ];
-    } 
-    $total=getTotalPanier();
-    //   var_dump($panier_complet);
- 
-    // $monpanier existe avec tous les elements
- 
-    // derniere etape on ramene une vue affichant le panier
+        // on boucle sur le tableau de la session 
+        foreach( $panier as $cle_produit => $quantite){
+            // produit contient un tableau avec tout les element d'un produit
+            // pour un identifiant du produit
+            $produit=getOneProduit_Entity($cle_produit);
+            $panier_complet[]=[
+                'produit'=>$produit,
+                'quantite'=>$quantite,
+                'total'=>$produit['prix']*$quantite
+            ];
+        } 
+        $total=getTotalPanier();
+        //   var_dump($panier_complet);
+    
+        // $monpanier existe avec tous les elements
+    
+        // derniere etape on ramene une vue affichant le panier
+    }
     include __DIR__.'/../../templates/voir_panier.php'; 
 }

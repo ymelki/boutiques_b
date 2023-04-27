@@ -38,6 +38,4 @@ function mes_commande(){
     $mescommandes=getCommande($_GET['id']);
     // var_dump($mescommandes);
     include __DIR__.'/../../templates/voir_commande.php'; 
-
-
 }
