@@ -14,7 +14,8 @@ catalogue !
                         <p class="card-text"><?= $unproduit['description'] ?></p>
                         <p>
                             <a href="/detail?id=<?=$unproduit['id']?>">VOIR LE DETAIL</a>
-                                 <a href="/ajouter_panier_produit?id=<?=$unproduit['id']?>">AJOUTER AU PANIER</a>
+                                 
+                                <a href="/ajouter_panier_produit?id=<?=$unproduit['id']?>">AJOUTER AU PANIER</a>
                                 <a href="/supprimer_produit?id=<?=$unproduit['id']?>">SUPPRIMER</a>
                          </p>
                     </div>

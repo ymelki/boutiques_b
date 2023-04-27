@@ -6,7 +6,7 @@
         </div>
         <div>
             <label for="mail">Mot de passe</label>
-            <input type="text" id="pwd" name="pwd">
+            <input type="password" id="pwd" name="pwd">
         </div> 
         <input type="submit" value="CONNEXION"/>
 </form>

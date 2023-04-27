@@ -34,8 +34,8 @@ function mes_commande(){
     include_once __DIR__."/../Entity/User.php";
     $user=getDetailUser($_SESSION['user']);
     include_once __DIR__."/../Entity/commande.php";
-    //$mescommandes=getCommande($user['id']);
-    $mescommandes=getCommande($_GET['id']);
+    $mescommandes=getCommande($user['id']);
+    //$mescommandes=getCommande($_GET['id']);
     // var_dump($mescommandes);
     include __DIR__.'/../../templates/voir_commande.php'; 
 }
