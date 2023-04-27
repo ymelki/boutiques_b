@@ -20,11 +20,30 @@
         
     }
 
-    function getCommande($id_user){
+  /*  function getCommande($id_user){
         $dbh=connect_bd();
         //2. RECUPERER LES DONNEES 
         $resultat = $dbh->query("SELECT * FROM commande C LEFT JOIN factures F ON C.facture_id=F.id LEFT JOIN PRODUIT P on C.produit_id = P.id where f.user_id=$id_user;
         ")->fetchAll();
+        // print_r($resultat);
+        return $resultat;
+
+    }
+    */
+
+    function getCommande($id_user){
+        $dbh=connect_bd();
+        //2. RECUPERER LES DONNEES 
+        $requetePrepare = $dbh->prepare(
+            "SELECT * FROM commande C
+             LEFT JOIN factures F ON C.facture_id=F.id LEFT JOIN PRODUIT P 
+             on C.produit_id = P.id where f.user_id=:uniduser"
+        
+        );
+        $requetePrepare->bindParam(':uniduser', $id_user, PDO::PARAM_INT);
+
+        $requetePrepare->execute();
+        $resultat =$requetePrepare->fetchAll();
         // print_r($resultat);
         return $resultat;
 
